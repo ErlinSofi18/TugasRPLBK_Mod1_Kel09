@@ -1,3 +1,7 @@
+import data from "./data_aegis.js"
+
+const input = document.getElementById("input")
+const result = document.getElementById("result")
 //Menampilkan Nama Kelompok Menggunakan Function Map (Pengolahan Array)
 const anggota = [
   { nama: "Erlin Sofia" },
@@ -9,12 +13,13 @@ const anggota = [
 document.getElementById("textkelompok").innerHTML = anggota.map(getKelompok);
 
 function getKelompok(item) {
-    return [item.nama];
-  }
-  
-  function filterData(query) {
-    return data.filter((el) => el.nama_lengkap.toLowerCase().includes(query.toLowerCase()));
-  }
+  return [item.nama];
+}
+
+function filterData(query) {
+  return data.filter((el) => el.nama_lengkap.toLowerCase().includes(query.toLowerCase()));
+}
+
 //Fungsi Temukan
 window.temukan =  () => {
   const filteredData = input.value == "" ? alert("Input Tidak Boleh Kosong!") : filterData(input.value)
