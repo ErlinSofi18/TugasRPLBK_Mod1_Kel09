@@ -8,6 +8,13 @@ const anggota = [
 
 document.getElementById("textkelompok").innerHTML = anggota.map(getKelompok);
 
+function getKelompok(item) {
+    return [item.nama];
+  }
+  
+  function filterData(query) {
+    return data.filter((el) => el.nama_lengkap.toLowerCase().includes(query.toLowerCase()));
+  }
 //Fungsi Temukan
 window.temukan =  () => {
   const filteredData = input.value == "" ? alert("Input Tidak Boleh Kosong!") : filterData(input.value)
